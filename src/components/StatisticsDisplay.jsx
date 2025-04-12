@@ -1,11 +1,11 @@
 import React from 'react';
 
-function StatisticsDisplay({ comparisons, swaps, algorithm}) {
-  //Getting algorithm complexity information
+function StatisticsDisplay({ comparisons, swaps, algorithm }) {
+  // Get algorithm complexity information
   const getComplexity = (algo) => {
     const complexities = {
       quickSort: {
-        time: 'O(n log n) average, O(n^2) worst case',
+        time: 'O(n log n) average, O(n²) worst case',
         space: 'O(log n)'
       },
       mergeSort: {
@@ -13,11 +13,11 @@ function StatisticsDisplay({ comparisons, swaps, algorithm}) {
         space: 'O(n)'
       },
       bubbleSort: {
-        time: 'O(n^2)',
+        time: 'O(n²)',
         space: 'O(1)'
       },
       insertionSort: {
-        time: 'O(n^2)',
+        time: 'O(n²)',
         space: 'O(1)'
       },
       dijkstra: {
@@ -29,26 +29,25 @@ function StatisticsDisplay({ comparisons, swaps, algorithm}) {
         space: 'O(V)'
       }
     };
-
-    return complexities[algo] || { time: 'unknown', space: 'Unknown'}
+    
+    return complexities[algo] || { time: 'Unknown', space: 'Unknown' };
   };
-
+  
   const complexity = getComplexity(algorithm);
   const isPathfinding = algorithm === 'dijkstra' || algorithm === 'aStar';
-
+  
   return (
     <div className="statistics-panel">
       <h3>Performance Metrics</h3>
-
+      
       <div className="metrics">
         <div className="metric">
-          <span classNam="metric-label">
-            {isPathfinding ? 'Node Visited:' : 'Comparisons:'}
-            </span>
-            <span className="metric-value">{comparisons}
+          <span className="metric-label">
+            {isPathfinding ? 'Nodes Visited:' : 'Comparisons:'}
           </span>
+          <span className="metric-value">{comparisons}</span>
         </div>
-
+        
         <div className="metric">
           <span className="metric-label">
             {isPathfinding ? 'Path Changes:' : 'Swaps:'}
@@ -56,7 +55,7 @@ function StatisticsDisplay({ comparisons, swaps, algorithm}) {
           <span className="metric-value">{swaps}</span>
         </div>
       </div>
-
+      
       <div className="complexity-info">
         <h4>Algorithm Complexity</h4>
         <p><strong>Time:</strong> {complexity.time}</p>
