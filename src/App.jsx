@@ -89,6 +89,13 @@ function App() {
 
   const runAnimations = (animations) => {
     if (animations.length === 0) {
+      //After animation is done, it should sort the array
+      const sortedArray = [...array].sort((a,b) => {
+        const valA = typeof a === 'object' ? a.value : a;
+        const valB = typeof b === 'object' ? b.value : b;
+        return valA - valB;
+        })
+        setArray(sortedArray);
       setIsRunning(false);
       return;
     }
@@ -100,24 +107,40 @@ function App() {
     if (currentAnimation.type === 'compare') {
       setComparisons(prev => prev + 1);
       // Highlight elements being compared
-      const newArr = [...array];
-      newArr[currentAnimation.indices[0]] = {
-        value: newArr[currentAnimation.indices[0]],
-        status: 'comparing'
-      };
-      newArr[currentAnimation.indices[1]] = {
-        value: newArr[currentAnimation.indices[1]],
-        status: 'comparing'
-      };
-      setArray(newArr);
+      setArray(prevArray => {
+        const newArr = [...prevArray];
+        const idx1 = currentAnimation.indices[0];
+        const idx2 = currentAnimation.indices[1];
+        
+        // Preserve the value but add comparing status
+        newArr[idx1] = {
+          value: typeof newArr[idx1] === 'object' ? newArr[idx1].value : newArr[idx1],
+          status: 'comparing'
+        };
+        newArr[idx2] = {
+          value: typeof newArr[idx2] === 'object' ? newArr[idx2].value : newArr[idx2],
+          status: 'comparing'
+        };
+        return newArr;
+      });
     } else if (currentAnimation.type === 'swap') {
       setSwaps(prev => prev + 1);
       // Perform the swap
-      const newArr = [...array];
-      const temp = newArr[currentAnimation.indices[0]];
-      newArr[currentAnimation.indices[0]] = newArr[currentAnimation.indices[1]];
-      newArr[currentAnimation.indices[1]] = temp;
-      setArray(newArr);
+      setArray(prevArray => {
+        const newArr = [...prevArray];
+        const idx1 = currentAnimation.indices[0];
+        const idx2 = currentAnimation.indices[1];
+        
+        // Extract values (handling both raw numbers and objects with value property)
+        const val1 = typeof newArr[idx1] === 'object' ? newArr[idx1].value : newArr[idx1];
+        const val2 = typeof newArr[idx2] === 'object' ? newArr[idx2].value : newArr[idx2];
+        
+        // Perform the swap with 'swapping' status
+        newArr[idx1] = { value: val2, status: 'swapping' };
+        newArr[idx2] = { value: val1, status: 'swapping' };
+        
+        return newArr;
+      });
     }
     
     // Schedule next animation
