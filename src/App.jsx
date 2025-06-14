@@ -24,7 +24,9 @@ function App() {
   const generateRandomArray = () => {
     const newArray = [];
     for (let i = 0; i < arraySize; i++) {
-      newArray.push(Math.floor(Math.random() * 100) + 5);
+      // newArray.push(Math.floor(Math.random() * 100) + 5); inconsistent array object structure after animation
+      newArray.push({ value: Math.floor(Math.random() * 100) + 5, status: 'default' }); //better version to store the elements as objects
+
     }
     setArray(newArray);
     setComparisons(0);
@@ -90,11 +92,10 @@ function App() {
   const runAnimations = (animations) => {
     if (animations.length === 0) {
       //After animation is done, it should sort the array
-      const sortedArray = [...array].sort((a,b) => {
-        const valA = typeof a === 'object' ? a.value : a;
-        const valB = typeof b === 'object' ? b.value : b;
-        return valA - valB;
-        })
+      const sortedArray = [...array].sort((a,b) => a.value - b.value);//updated version
+        // const valA = typeof a === 'object' ? a.value : a;
+        // const valB = typeof b === 'object' ? b.value : b;
+        // return valA - valB; older version})
         setArray(sortedArray);
       setIsRunning(false);
       return;
@@ -132,8 +133,10 @@ function App() {
         const idx2 = currentAnimation.indices[1];
         
         // Extract values (handling both raw numbers and objects with value property)
-        const val1 = typeof newArr[idx1] === 'object' ? newArr[idx1].value : newArr[idx1];
-        const val2 = typeof newArr[idx2] === 'object' ? newArr[idx2].value : newArr[idx2];
+        //typeof newArr[idx1] === 'object' ? newArr[idx1].value : newArr[idx1]; older version
+        const val1 = newArr[idx1].value //updated verstion
+        // typeof newArr[idx2] === 'object' ? newArr[idx2].value : newArr[idx2]; older version
+        const val2 = newArr[idx2].value;
         
         // Perform the swap with 'swapping' status
         newArr[idx1] = { value: val2, status: 'swapping' };
@@ -184,7 +187,7 @@ function App() {
       // Compare current element with pivot
       animations.push({ type: 'compare', indices: [j, high] });
       
-      if (arr[j] <= pivot) {
+      if (arr[j].value <= pivot.value) {
         i++;
         // Swap elements
         animations.push({ type: 'swap', indices: [i, j] });
@@ -234,7 +237,7 @@ function App() {
       // Compare elements from both subarrays
       animations.push({ type: 'compare', indices: [left + i, mid + 1 + j] });
       
-      if (leftArr[i] <= rightArr[j]) {
+      if (leftArr[i].value <= rightArr[j].value) {
         animations.push({ type: 'swap', indices: [k, left + i] });
         arr[k] = leftArr[i];
         i++;
