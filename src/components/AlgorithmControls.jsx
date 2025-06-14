@@ -17,7 +17,7 @@ function AlgorithmControls({
   const maxArrSize = 100;
   const minSpeed = 1;
   const maxSpeed = 10; 
-  
+
   return (
     <div className="controls-panel">
       <div className="control-group">
@@ -64,6 +64,7 @@ function AlgorithmControls({
           max={maxSpeed}
           value={speed} 
           onChange={onSpeedChange}
+          disabled = {isRunning}
         />
         <span>{speed}%</span>
       </div>
