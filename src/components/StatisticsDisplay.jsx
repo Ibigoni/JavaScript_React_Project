@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function StatisticsDisplay({ comparisons, swaps, algorithm }) {
   // Get algorithm complexity information
@@ -35,6 +36,7 @@ function StatisticsDisplay({ comparisons, swaps, algorithm }) {
   
   const complexity = getComplexity(algorithm);
   const isPathfinding = algorithm === 'dijkstra' || algorithm === 'aStar';
+
   
   return (
     <div className="statistics-panel">
@@ -45,14 +47,14 @@ function StatisticsDisplay({ comparisons, swaps, algorithm }) {
           <span className="metric-label">
             {isPathfinding ? 'Nodes Visited:' : 'Comparisons:'}
           </span>
-          <span className="metric-value">{comparisons}</span>
+          <span className="metric-value">{comparisons ?? 0}</span>
         </div>
         
         <div className="metric">
           <span className="metric-label">
             {isPathfinding ? 'Path Changes:' : 'Swaps:'}
           </span>
-          <span className="metric-value">{swaps}</span>
+          <span className="metric-value">{swaps ?? 0}</span>
         </div>
       </div>
       
@@ -64,5 +66,11 @@ function StatisticsDisplay({ comparisons, swaps, algorithm }) {
     </div>
   );
 }
+
+StatisticsDisplay.PropTypes = {
+  comparisons: PropTypes.number,
+  swaps: PropTypes.number,
+  algorithm: PropTypes.string.isRequired
+};
 
 export default StatisticsDisplay;
