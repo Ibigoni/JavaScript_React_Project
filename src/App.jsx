@@ -92,11 +92,6 @@ function App() {
   const runAnimations = (animations) => {
     if (animations.length === 0) {
       //After animation is done, it should sort the array
-      const sortedArray = [...array].sort((a,b) => a.value - b.value);//updated version
-        // const valA = typeof a === 'object' ? a.value : a;
-        // const valB = typeof b === 'object' ? b.value : b;
-        // return valA - valB; older version})
-        setArray(sortedArray);
       setIsRunning(false);
       return;
     }
