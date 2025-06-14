@@ -1,0 +1,75 @@
+Common React Hooks (the "use..." things)
+1. useState()
+✅ For state (data that changes).
+
+  const [count, setCount] = useState(0);
+
+✔️ Remembers values between renders.
+✔️ Lets you update those values.
+
+
+2. useEffect()
+✅ For side effects (code that runs when something happens — like fetching data or changing the DOM).
+
+  useEffect(() => {
+    console.log("Component mounted or updated!");
+  }, [dependency]);
+
+✔️ Runs after the component renders.
+✔️ Can run only when certain things change (based on the [dependency] array).
+
+
+3. useRef()
+✅ For referencing DOM elements or keeping a value that doesn’t cause re-render.
+
+  const inputRef = useRef(null);
+
+✔️ Like a hidden box to store something across renders.
+✔️ Often used to directly access DOM nodes.
+
+
+4. useContext()
+✅ For accessing global data from React Context (like global state or theme).
+
+  const theme = useContext(ThemeContext);
+
+✔️ Lets you use data from a parent provider.
+✔️ Useful for things like themes, user data, or app-wide settings.
+
+
+5. useReducer()
+✅ For complex state logic (like multiple state changes or managing objects).
+
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+✔️ Like useState, but better for complex cases (like Redux-style state management).
+
+
+6. useMemo()
+✅ For memorizing a computed value to avoid re-computation.
+
+  const result = useMemo(() => expensiveFunction(a, b), [a, b]);
+
+✔️ Only recalculates when dependencies change.
+✔️ Helps performance.
+
+
+7. useCallback()
+✅ For memorizing a function, so it doesn’t get recreated on every render.
+
+  const memoizedCallback = useCallback(() => {
+    doSomething(a, b);
+  }, [a, b]);
+
+✔️ Good for passing stable functions to child components.
+
+
+Quick Summary Table:
+Hook	            Purpose
+useState:	        State (data that changes)
+useEffect:        Side effects (e.g., API calls)
+useRef:	          Mutable refs or DOM nodes
+useContext:	      Consume context (global state)
+useReducer:	      Complex state management
+useMemo:	        Memoize computed value
+useCallback:	    Memoize function reference

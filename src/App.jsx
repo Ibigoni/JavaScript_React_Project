@@ -12,7 +12,7 @@ function App() {
   // State for array to be sorted/traversed
   const [array, setArray] = useState([]);
   const [arraySize, setArraySize] = useState(50);
-  const [speed, setSpeed] = useState(50); // Animation speed (1-100)
+  const [speed, setSpeed] = useState(50); // Animation speedcon (1-100)
   const [algorithm, setAlgorithm] = useState('quickSort');
   const [isRunning, setIsRunning] = useState(false);
   const [comparisons, setComparisons] = useState(0);
@@ -290,7 +290,7 @@ function App() {
       <Header />
       <div className="main-content">
         <AlgorithmControls 
-          algorithm={algorithm}
+          algorithm = {algorithm}
           onAlgorithmChange={handleAlgorithmChange}
           arraySize={arraySize}
           onSizeChange={handleSizeChange}
