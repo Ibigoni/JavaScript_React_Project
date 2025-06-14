@@ -31,10 +31,11 @@ function VisualizationCanvas({ array, algorithm }) {
           return (
             <div 
               key={index}
+              title={`${value}`}
               className={`bar ${status || 'default'}`}
               style={{
                 height: `${value * 3}px`,
-                width: `${100 / array.length}%`,
+                width: `${array.length > 0 ? 100 / array.length : 100}%`,
                 maxWidth: '30px',
                 marginLeft: '1px',
                 marginRight: '1px'
