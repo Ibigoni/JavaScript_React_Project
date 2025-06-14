@@ -14,9 +14,9 @@ function AlgorithmControls({
   isRunning 
 }) {
   const minArrSize = 10;
-  const maxArrSize = 100;
+  const maxArrSize = 50;
   const minSpeed = 1;
-  const maxSpeed = 10; 
+  const maxSpeed = 50; 
 
   return (
     <div className="controls-panel">
