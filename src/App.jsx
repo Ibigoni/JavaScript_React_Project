@@ -57,6 +57,9 @@ function App() {
       case 'bubbleSort': // Added Bubble Sort here
         bubbleSort(arrCopy, animations);
         break;
+      case 'insertionSort':
+        insertionSort(arrCopy, animations);
+        break;
       case 'dijkstra':
         dijkstraSimulation(animations);
         break;
@@ -197,7 +200,7 @@ function App() {
     }
   };
 
-  // Bubble Sort (NEWLY ADDED)
+  // Bubble Sort Implementation
   const bubbleSort = (arr, animations) => {
     const n = arr.length;
     for (let i = 0; i < n - 1; i++) {
@@ -209,6 +212,28 @@ function App() {
           [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
         }
       }
+    }
+  };
+
+  // Insetion Sort Implementation
+  const insertionSort = (arr, animations) => {
+    const n = arr.length;
+    for (let i = 1; i < n; i++) {
+      let key = arr[i];
+      let j = i - 1;
+
+      //Compare key with each element on the left until an element small than it is found
+      while (j >= 0 && arr[j].value > key.value) {
+        animations.push({ type: 'compare', indices: [j, j + 1]});
+
+        // Move the greater element one position ahead to make space for key
+        animations.push({ type: 'swap', indices: [j + 1, j]});
+        arr[j + 1] = arr[j];
+        j = j - 1;
+      }
+
+      //Insert the key after the element that is just smaller than it.
+      arr[j + 1] = key;
     }
   };
 
