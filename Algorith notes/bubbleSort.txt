@@ -1,0 +1,24 @@
+Bubble Sort is an algorithm used to sort a list of items by repeatedly comparing adjacent elements and swapping them if they are in the wrong order. 
+This algorithm repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. It’s a simple and easy-to-understand algorithm, making it a great starting point for learning about sorting.
+
+How it works:
+Start at the beginning: Look at the first two kids in line.
+
+Compare: If the first kid is taller than the second kid, swap their positions.
+
+Move to the next pair: Now, look at the second and third kids, and do the same comparison and swap if needed.
+
+Keep going: Continue this process until you reach the end of the line. After the first pass, the tallest kid will be at the end of the line.
+
+Repeat: Now, repeat the entire process, but this time, stop one position earlier (since the last kid is already in the correct spot).
+
+Continue repeating: Keep repeating this until everything is sorted. With each pass, the next tallest kid “bubbles” up to their correct position.
+
+Time complexity: O(n^2) => average case and worst case.
+The time complexity is O(n^2) (quadratic) because, on average, there will be n passes and for each pass, there will be an around n-1 comparisions and swaps of adjacent elements.
+
+Space complexity: O(1)
+Space complexity tells us how much extra memory an algorithm needs. Bubble sort is an “in-place” sorting algorithm. This means it sorts the array directly, without needing a lot of extra space.
+
+
+Very good for small arrays

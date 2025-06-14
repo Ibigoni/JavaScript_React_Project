@@ -1,0 +1,32 @@
+What are PropTypes?
+PropTypes is a tool in React that helps you check the type of data (props) your components receive.
+
+Think of it like this:
+If you build a machine that expects only numbers, but someone gives you a string, the machine could break.
+PropTypes warn you in the console when this happens, helping you catch mistakes early.
+
+Example (without proptype)
+function Welcome({ name }) {
+  return <h1>Hello, {name}</h1>;
+}
+
+<Welcome name={123} /> // Oops! Not a string! 
+React won't warn you unless you use PropTypes.
+
+Example (with proptype)
+import PropTypes from 'prop-types';
+
+function Welcome({ name }) {
+  return <h1>Hello, {name}</h1>;
+}
+
+Welcome.propTypes = {
+  name: PropTypes.string.isRequired
+};
+<Welcome name={123} />
+React will give you a warning in the console:
+"Invalid prop name of type number supplied to Welcome, expected string."
+
+
+In short:
+PropTypes = A simple safety check for your component’s inputs (props).

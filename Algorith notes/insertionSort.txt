@@ -1,0 +1,20 @@
+Insertion sort gets its name from the way it “inserts” each element into its proper position within the sorted portion of the array.
+
+How it works:
+It maintains two portions within the array: a sorted portion (initially containing just the first element) and an unsorted portion (containing the remaining elements).
+
+It picks elements one by one from the unsorted portion, comparing each element with those in the sorted portion.
+
+It shifts larger elements within the sorted portion to the right, creating space to insert the picked element into its correct position.
+
+The process repeats until all elements from the unsorted portion have been moved into their correct positions within the sorted portion, resulting in a fully sorted array.
+
+Time Complexity: O(n^2) => average and worst case
+
+Space Complexity: O(1)
+Insertion sort has a constant space complexity because it sorts in-place:
+
+  Only requires a single additional variable (key) for temporary storage
+  No extra arrays or data structures needed
+  Space usage doesn’t grow with input size
+  Makes it memory-efficient for large datasets

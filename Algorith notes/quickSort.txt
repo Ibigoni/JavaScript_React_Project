@@ -1,0 +1,14 @@
+Quicksort is a divide and conquer algorithm. Quicksort first divides a large array into two smaller sub-arrays: the low elements and the high elements. Quicksort can then recursively sort the sub-arrays.
+
+Time complexity :
+Time complexity tells us how the running time of an algorithm grows as the input size increases. For sorting algorithms like Quick Sort, this helps us understand how efficiently they can handle larger datasets.
+  Best case: O(n log n) 
+  Average Case : O(n log n)
+  Worst Case: O(n^2)
+
+Space Complexity Analysis
+Space complexity measures the additional memory an algorithm needs beyond the input itself.
+  Stack Space: O(log n) average, O(n) worst case
+  Auxiliary Space: O(1)
+    - Quick Sort uses a constant amount of extra space for variables like the pivot, indices, and temporary variables for swapping
+    - This makes it more memory-efficient than algorithms like Merge Sort, which requires O(n) auxiliary space

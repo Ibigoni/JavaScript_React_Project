@@ -1,0 +1,4 @@
+Time complexity tells us how the running time of an algorithm grows as the input size increases.
+
+Space Complexity Analysis
+Space complexity measures the additional memory an algorithm needs beyond the input itself.
