@@ -73,6 +73,9 @@ function App() {
       case 'mergeSort':
         mergeSort(arrCopy, 0, arrCopy.length - 1, animations);
         break;
+      case 'bubbleSort':
+        bubbleSort(arr,animations);
+        break;
       case 'dijkstra':
         // Simplified for demonstration - actual implementation would differ
         dijkstraSimulation(animations);
@@ -258,6 +261,22 @@ function App() {
       arr[k] = rightArr[j];
       j++;
       k++;
+    }
+  };
+
+  // Bubble Sort implementation
+  const bubbleSort = (arr, animations) => {
+    const n = arr.length;
+    for (let i = 0; i < n - 1; i++){
+      for( let j = 0; j < n -1; j++) {
+        //compare elements at index j and j+1
+        animations.push({ type: 'compare', indices: [j, j + 1]});
+
+        if (arr[j].value > arr[j + 1].value) {
+          //swap elements if they are in the wrong order
+          [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]; //actual swap in the copied array
+        }
+      }
     }
   };
 
