@@ -74,7 +74,7 @@ function App() {
         mergeSort(arrCopy, 0, arrCopy.length - 1, animations);
         break;
       case 'bubbleSort':
-        bubbleSort(arr,animations);
+        bubbleSort(arrCopy,animations);
         break;
       case 'dijkstra':
         // Simplified for demonstration - actual implementation would differ
