@@ -31,7 +31,7 @@ function VisualizationCanvas({ array, algorithm }) {
           return (
             <div 
               key={index}
-              className={`bar ${status}`}
+              className={`bar ${status || 'default'}`}
               style={{
                 height: `${value * 3}px`,
                 width: `${100 / array.length}%`,

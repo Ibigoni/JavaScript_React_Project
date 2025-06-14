@@ -99,6 +99,12 @@ function App() {
     const newAnimations = [...animations];
     const currentAnimation = newAnimations.shift();
     
+    // Clear all statues first
+    setArray(prevArray => prevArray.map(item => ({
+      ...item,
+      status: 'default'
+    })));
+
     // Apply the animation
     if (currentAnimation.type === 'compare') {
       setComparisons(prev => prev + 1);
@@ -109,14 +115,8 @@ function App() {
         const idx2 = currentAnimation.indices[1];
         
         // Preserve the value but add comparing status
-        newArr[idx1] = {
-          value: typeof newArr[idx1] === 'object' ? newArr[idx1].value : newArr[idx1],
-          status: 'comparing'
-        };
-        newArr[idx2] = {
-          value: typeof newArr[idx2] === 'object' ? newArr[idx2].value : newArr[idx2],
-          status: 'comparing'
-        };
+        newArr[idx1] = { ...newArr[idx1], status: 'comparing'};
+        newArr[idx2] = { ...newArr[idx2], status: 'comparing'};
         return newArr;
       });
     } else if (currentAnimation.type === 'swap') {
