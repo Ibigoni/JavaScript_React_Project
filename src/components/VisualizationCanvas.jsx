@@ -1,7 +1,7 @@
 import React from 'react';
 
 function VisualizationCanvas({ array, algorithm }) {
-  // Determine if we're showing a sorting or pathfinding visualization
+  // Determine if it's a sorting or pathfinding visualization
   const isPathfinding = algorithm === 'dijkstra' || algorithm === 'aStar';
   
   if (isPathfinding) {
