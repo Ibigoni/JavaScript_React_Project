@@ -24,6 +24,11 @@ Common React Hooks (the "use..." things)
 
   const inputRef = useRef(null);
 
+  to assign in the dom you use 'inputRef.current
+  It can be used to refer DOM elements or store mutable values (non-DOM)
+  Example: 
+
+  const timer = useRef(0);
 ✔️ Like a hidden box to store something across renders.
 ✔️ Often used to directly access DOM nodes.
 
