@@ -4,7 +4,7 @@ function Header() {
   
   return(
   <header className="header">
-    <h1>Algorithm Visualizer</h1>
+    <h1>Sorting Algorithm</h1>
     <p>Visualize sorting and pathfinding algorithms in action</p>
   </header>
   );
