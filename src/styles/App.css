@@ -1,4 +1,6 @@
 /* App.css */
+@import "tailwincss";
+/*
 :root {
   --primary-color: #4a90e2;
   --secondary-color: #6c757d;
@@ -29,8 +31,9 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
+  */
 
-/* Header Styles */
+/* Header Styles 
 .header {
   text-align: center;
   margin-bottom: 30px;
@@ -48,8 +51,9 @@ body {
   color: var(--secondary-color);
   font-size: 1.2rem;
 }
+  */
 
-/* Main Content Layout */
+/* Main Content Layout 
 .main-content {
   display: grid;
   grid-template-columns: 1fr;
@@ -76,8 +80,8 @@ body {
     grid-area: statistics;
   }
 }
-
-/* Controls Panel Styles */
+*/
+/* Controls Panel Styles 
 .controls-panel {
   background-color: white;
   border-radius: 8px;
@@ -159,8 +163,9 @@ button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
+ */
 
-/* Visualization Canvas Styles */
+/* Visualization Canvas Styles 
 .visualization-canvas {
   background-color: white;
   border-radius: 8px;
@@ -170,8 +175,8 @@ button:disabled {
   display: flex;
   flex-direction: column;
 }
-
-/* Sorting visualization */
+*/
+/* Sorting visualization 
 .bars-container {
   display: flex;
   align-items: flex-end;
@@ -195,8 +200,9 @@ button:disabled {
 .bar.completed {
   background-color: var(--completed-color);
 }
+  */
 
-/* Pathfinding visualization */
+/* Pathfinding visualization 
 .grid-container {
   height: 100%;
   display: flex;
@@ -208,8 +214,9 @@ button:disabled {
   text-align: center;
   color: var(--secondary-color);
 }
+  */
 
-/* Statistics Panel Styles */
+/* Statistics Panel Styles 
 .statistics-panel {
   background-color: white;
   border-radius: 8px;
@@ -263,8 +270,8 @@ button:disabled {
   margin-bottom: 5px;
   color: var(--secondary-color);
 }
-
-/* Mobile Responsiveness */
+*/
+/* Mobile Responsiveness 
 @media (max-width: 767px) {
   .app {
     padding: 10px;
@@ -278,3 +285,4 @@ button:disabled {
     height: 300px;
   }
 }
+  */
