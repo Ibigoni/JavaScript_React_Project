@@ -1,5 +1,12 @@
 /* App.css */
-@import "tailwincss";
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+/* Your custom styles below this line */
+
+
+/* Your custom CSS BELOW this */
+
 /*
 :root {
   --primary-color: #4a90e2;
