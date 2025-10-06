@@ -1,6 +1,6 @@
 # 🧮 Algorithm Visualizer
 
-An interactive web application built with **React** and **Vite** that visually demonstrates how popular algorithms work — helping users understand data structures and algorithm logic through animations, color changes, and step-by-step progression.
+An interactive web application built with **React** and **Vite** that visually demonstrates how popular algorithms work, helping users understand data structures and algorithm logic through animations, color changes, and step-by-step progression.
 
 ---
 
