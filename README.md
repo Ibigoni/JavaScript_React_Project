@@ -24,7 +24,6 @@ Each algorithm runs in real time, showing array updates, swaps, comparisons, and
 - ⚙️ **Multiple Algorithms:** Supports common sorting algorithms such as:
   - Bubble Sort  
   - Insertion Sort  
-  - Selection Sort  
   - Merge Sort  
   - Quick Sort  
 - ⏱️ **Step-by-Step Visualization:** Shows the internal operations of each algorithm visually.  
