@@ -1,12 +1,89 @@
-# React + Vite
+# 🧮 Algorithm Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive web application built with **React** and **Vite** that visually demonstrates how popular algorithms work — helping users understand data structures and algorithm logic through animations, color changes, and step-by-step progression.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
+👉 https://ibigoni.github.io/JavaScript_React_Project/
 
-## Expanding the ESLint configuration
+**NOTE**: There are instructions below on how to run locally if the link above doesn't work
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📖 Overview
+
+The **Algorithm Visualizer** allows users to select different sorting or searching algorithms and visualize how they operate internally.  
+Each algorithm runs in real time, showing array updates, swaps, comparisons, and timing data.
+
+---
+
+## ✨ Features
+
+- 🎨 **Interactive UI:** Built with React and styled using CSS for a clean, responsive layout.  
+- ⚙️ **Multiple Algorithms:** Supports common sorting algorithms such as:
+  - Bubble Sort  
+  - Insertion Sort  
+  - Selection Sort  
+  - Merge Sort  
+  - Quick Sort  
+- ⏱️ **Step-by-Step Visualization:** Shows the internal operations of each algorithm visually.  
+- 📊 **Adjustable Parameters:** Users can change array size and sorting speed.  
+- 📈 **Performance Insights:** Displays the time complexity and number of operations.  
+
+---
+
+## 🧠 How It Works
+
+Each algorithm is implemented as a JavaScript function that operates on an array.  
+Visual updates are handled using React’s state and asynchronous rendering.
+
+**Formula (Sorting Complexity Example):**
+> Time Complexity ≈ O(n²) for simple algorithms like Bubble or Insertion Sort,  
+> and O(n log n) for efficient algorithms like Merge or Quick Sort.
+
+The app translates each algorithm’s step into a sequence of animations, changing the color and height of visual bars to represent comparisons and swaps.
+
+---
+
+
+---
+
+## ⚙️ Installation & Setup
+
+Clone the repository and run the app locally:
+
+---
+# Clone the repo
+git clone https://github.com/ibigoni/JavaScript_React_Project.git
+
+# Navigate into the folder
+cd JavaScript_React_Project
+
+# Install dependencies
+npm install
+
+# Run in development mode
+npm run dev
+
+# Build for production
+npm run build
+
+# Deploy to GitHub Pages
+npm run deploy
+
+
+🧩 Tech Stack
+
+React.js – Component-based front-end framework
+Vite – Fast build tool and development server
+JavaScript (ES6+) – Logic and animations
+CSS – Styling and layout
+gh-pages – Deployment automation
+
+
+🧑‍💻 Author
+
+Tamunoibigoni Inye-Tam
+📧 inyetamibigoni@gmail.com
+🔗 LinkedIn: https://www.linkedin.com/in/ibigoni-inye-tam-5376b2204/
