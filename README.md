@@ -56,6 +56,6 @@ The app translates each algorithm’s step into a sequence of animations, changi
 
 🧑‍💻 Author
 
-Tamunoibigoni Inye-Tam
-📧 inyetamibigoni@gmail.com
-🔗 LinkedIn: https://www.linkedin.com/in/ibigoni-inye-tam-5376b2204/
+- Tamunoibigoni Inye-Tam
+- 📧 inyetamibigoni@gmail.com
+- 🔗 LinkedIn: https://www.linkedin.com/in/ibigoni-inye-tam-5376b2204/
