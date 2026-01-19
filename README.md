@@ -47,11 +47,11 @@ The app translates each algorithm’s step into a sequence of animations, changi
 
 🧩 Tech Stack
 
-** React.js – Component-based front-end framework
-** Vite – Fast build tool and development server
-** JavaScript (ES6+) – Logic and animations
-** CSS – Styling and layout
-** gh-pages – Deployment automation
+React.js – Component-based front-end framework
+Vite – Fast build tool and development server
+JavaScript (ES6+) – Logic and animations
+CSS – Styling and layout
+gh-pages – Deployment automation
 
 
 🧑‍💻 Author
