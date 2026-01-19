@@ -45,33 +45,6 @@ The app translates each algorithm’s step into a sequence of animations, changi
 
 ---
 
-
----
-
-## ⚙️ Installation & Setup
-
-Clone the repository and run the app locally:
-
----
-# Clone the repo
-git clone https://github.com/ibigoni/JavaScript_React_Project.git
-
-# Navigate into the folder
-cd JavaScript_React_Project
-
-# Install dependencies
-npm install
-
-# Run in development mode
-npm run dev
-
-# Build for production
-npm run build
-
-# Deploy to GitHub Pages
-npm run deploy
-
-
 🧩 Tech Stack
 
 React.js – Component-based front-end framework
