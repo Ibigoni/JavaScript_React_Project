@@ -45,7 +45,7 @@ The app translates each algorithm’s step into a sequence of animations, changi
 
 ---
 
-🧩 Tech Stack
+## 🧩 Tech Stack
 
 React.js – Component-based front-end framework
 Vite – Fast build tool and development server
